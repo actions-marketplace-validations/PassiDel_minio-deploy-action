@@ -1,9 +1,9 @@
 # Minio Deploy GitHub Action
 
-This is a fork from hkdobrev/minio-deploy-action with some minor changes. 
+This is a fork from lovellfelix/minio-deploy-action with some minor changes. 
 Run [minio client][] in GitHub Actions to deploy files to Minio object storage.
 
-It uses the `mc mirror --overwrite` command to deploy.
+It uses the `mc mirror --overwrite --remove` command to deploy.
 
 ## Usage
 
@@ -11,7 +11,7 @@ Put the following step in your workflow:
 
 ```yml
 - name: Minio Deploy
-  uses: lovellfelix/minio-deploy-action@v1
+  uses: passidel/minio-deploy-action@v1
   with:
     endpoint: ${{ secrets.MINIO_ENDPOINT }}
     access_key: ${{ secrets.MINIO_ACCESS_KEY }}
@@ -42,7 +42,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Minio Deploy
-        uses: lovellfelix/minio-deploy-action@v1
+        uses: passidel/minio-deploy-action@v1
         with:
           endpoint: ${{ secrets.MINIO_ENDPOINT }}
           access_key: ${{ secrets.MINIO_ACCESS_KEY }}
