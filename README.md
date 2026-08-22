@@ -3,7 +3,7 @@
 This is a fork from lovellfelix/minio-deploy-action with some minor changes. 
 Run [minio client][] in GitHub Actions to deploy files to Minio object storage.
 
-It uses the `mc mirror --overwrite --remove` command to deploy.
+It uses the `mc mirror --overwrite --remove` command to deploy, overwriting the old content in the `target_dir`.
 
 ## Usage
 
